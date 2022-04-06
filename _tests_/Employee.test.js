@@ -1,3 +1,4 @@
+const expect = require('chai/lib/chai/interface/expect');
 const Employee = require('../lib/Employee');
 
 describe('Employee',function(){
@@ -14,4 +15,24 @@ describe('Employee',function(){
 
         // create error object, test for error.
     })
+
+    it('get employee name', function(){
+        const emp = new Employee('Drew',3, 'dummy3@email.com');
+        expect(emp.getName()).toBe('Drew');        
+    });
+
+    it('get employee id', function(){
+        const emp = new Employee('Drew4',4, 'dummy4@email.com');
+        expect(emp.getId()).toBe(4);        
+    });
+
+    it('get employee email', function(){
+        const emp = new Employee('Drew5',5, 'dummy5@email.com');
+        expect(emp.getEmail()).toBe('dummy5@email.com');        
+    });
+
+    it('get role', function(){
+        const emp = new Employee('Drew6',6, 'dummy6@email.com');
+        expect(emp.getRole()).toBe('Employee');        
+    });
 })
