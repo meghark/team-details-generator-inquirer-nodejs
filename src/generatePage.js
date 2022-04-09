@@ -1,7 +1,8 @@
+
+
 const generateManagerCard = manager =>{
     let retValue ='';
     const current = manager[0];
-    console.log(current.getName());
     const name = current.getName();
     const id = current.getId();
     const email = current.getEmail();
@@ -29,7 +30,76 @@ const generateManagerCard = manager =>{
     return retValue;
 }
 
-const generatePage = (manager, engineer, intern) =>{
+const generateEngineerCard = engineer =>{
+  let retValue ='';
+
+  if(engineer)
+  {
+    for (let i=0; i< engineer.length; i++)
+    {
+      let current = engineer[i];
+      let name = current.getName();
+      let id = current.getId();
+      let email = current.getEmail();
+      let github = current.getGithub(); 
+
+      retValue +=`
+      <div class="col">
+      <div class="card mb-4 rounded-3 shadow-sm  bg-light">
+        <div class="card-header py-3 text-white bg-primary">
+          <h4 class="card-title">${name}</h4>
+          <h5 class="card-subtitle mb2"><span class="pe-2"><i class="fa-solid fa-glasses"></span></i>Engineer</h5>
+        </div>
+        <div class="card-body width: 18rem border-primary">
+           <ul class="list-group">
+            <li class="list-group-item">ID: <span>${id}</span></li>
+            <li class="list-group-item">Email: <a href="mailto: ${email}">${email}</a></li>
+            <li class="list-group-item">Github: <a href="www.github.com/${github}">${github}</a></li>
+           </ul>                  
+        </div>
+      </div>
+    </div>`;
+    }
+  }
+  return retValue;
+}
+
+const generateInterCard = intern => {
+  let retValue ='';
+
+  if(intern)
+  {
+    for (let i=0; i< intern.length; i++)
+    {
+      let current = intern[i];
+      let name = current.getName();
+      let id = current.getId();
+      let email = current.getEmail();
+      let school = current.getSchool(); 
+
+      retValue += `
+      <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm  bg-light">
+                  <div class="card-header py-3 text-white bg-primary">
+                    <h4 class="card-title">${name}</h4>
+                    <h5 class="card-subtitle mb2"><span class="pe-2"><i class="fa-solid fa-user-graduate"></i></span>Intern</h5>
+                  </div>
+                  <div class="card-body width: 18rem border-primary">
+                     <ul class="list-group">
+                      <li class="list-group-item">ID: <span>${id}</span></li>
+                      <li class="list-group-item">Email: <a href="mailto: ${email}">${email}</a></li>
+                      <li class="list-group-item">School: <span>${school}</span></li>
+                     </ul>                  
+                  </div>
+                </div>
+            </div>   
+      `;
+    }
+  }
+  return retValue;
+}
+
+const generatePage =async (manager, engineer, intern) =>{
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -52,7 +122,9 @@ const generatePage = (manager, engineer, intern) =>{
             </header>
             <main>
             <div class="row row-cols-1 row-cols-md-3 mb-3 container py-3 d-flex justify-content-center mx-auto">
-                  ${generateManagerCard(manager)}                                       
+                  ${generateManagerCard(manager)}  
+                  ${generateEngineerCard(engineer)}      
+                  ${generateInterCard(intern)}                              
             </div>            
             </main>
         </div>    
