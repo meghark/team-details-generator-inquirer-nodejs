@@ -10,13 +10,6 @@ describe('Intern',function() {
         expect(intern.school).toBe('Test School');
     } )
 
-    it('Verify duplicate employee id is not allowed', function(){
-        const employee1 = new Intern('Dane',2, 'dummy1.email.com');
-        const employee2 = new Intern('James',2, 'dummy2.email.com');
-
-        // create error object, test for error.
-    })
-
     it('get employee name', function(){
         const emp = new Intern('James',2 , 'dummy1@email.com', 'Test School');
         expect(emp.getName()).toBe('James');        

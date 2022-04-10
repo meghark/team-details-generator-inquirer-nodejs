@@ -10,13 +10,6 @@ describe('Engineer',function() {
         expect(engineer.github).toBe('githubrepo');
     } )
 
-    it('Verify duplicate employee id is not allowed', function(){
-        const employee1 = new Engineer('Dane',2, 'dummy1.email.com');
-        const employee2 = new Engineer('James',2, 'dummy2.email.com');
-
-        // create error object, test for error.
-    })
-
     it('get employee name', function(){
         const emp = new Engineer('Drew',3, 'dummy3@email.com');
         expect(emp.getName()).toBe('Drew');        
