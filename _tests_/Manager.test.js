@@ -10,27 +10,27 @@ describe('manager',function() {
         expect(manager.onum).toBe('886-888-888');
     } )
 
-     it('get employee name', function(){
+     it('Verify get manager name', function(){
         const emp = new Manager('Drew1',3, 'dummy3@email.com', '676-536-763');
         expect(emp.getName()).toBe('Drew1');        
     });
 
-    it('get employee id', function(){
+    it('Verify get manager id', function(){
         const emp = new Manager('Drew',4, 'dummy4@email.com', '676-536-762');
         expect(emp.getId()).toBe(4);        
     });
 
-    it('get employee email', function(){
+    it('Verify get manager email', function(){
         const emp = new Manager('Drew',5, 'dummy5@email.com', '676-536-764');
         expect(emp.getEmail()).toBe('dummy5@email.com');        
     });
 
-    it('get role', function(){
+    it('Verify get role', function(){
         const emp = new Manager('Drew',6, 'dummy6@email.com', '676-536-765');
         expect(emp.getRole()).toBe('Manager');        
     });
     
-    it('get role', function(){
+    it('Veriy get office number', function(){
         const emp = new Manager('Drew',7, 'dummy7@email.com', '676-536-767');
         expect(emp.getOfficeNum()).toBe('676-536-767');        
     });
