@@ -25,7 +25,7 @@ const generateEmployeeCard = emp =>{
       }
       else if(role == 'Engineer')
       {
-        specialSection =`<li class="list-group-item">Github: <a href="www.github.com/${current.getGithub()}">${current.getGithub()}</a></li>` ;
+        specialSection =`<li class="list-group-item">Github: <a href="https://github.com/${current.getGithub()}">${current.getGithub()}</a></li>` ;
         icon = `<span class="pe-2"><i class="fa-solid fa-glasses"></i></span>`;
       }
       else if (role == 'Intern')
