@@ -1,3 +1,5 @@
+
+//This function is used to create the employee card.
 const generateEmployeeCard = emp =>{
   let retValue ='';
 
@@ -13,6 +15,9 @@ const generateEmployeeCard = emp =>{
       let specialSection ='';
       let icon='';
 
+      //All the cards will display the employee name, email id, id and role.
+      //Based on employee role there will be additional fields like officenum for manager, github name for engineer and school for intern.
+      //Also based on the role the card will have different icons.
       if(role == 'Manager')
       {
         specialSection = `<li class="list-group-item">Office Number: <span>${current.getOfficeNum()}</span></li>`;
@@ -49,6 +54,8 @@ const generateEmployeeCard = emp =>{
     return retValue;
   }
 }
+
+//Generate the html page for the team. Takes the manager, engineer and intern array as input.
 
 const generatePage =async (manager, engineer, intern) =>{
     return `<!DOCTYPE html>
