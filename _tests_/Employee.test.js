@@ -63,7 +63,7 @@ describe('Employee',function() {
     })
 
     it('Verify error when id is string', function(){
-        const newEmp = () => new Employee('Test','5','t@t.com');
+        const newEmp = () => new Employee('Test','5test','t@t.com');
         const err = new Error("Provide a valid non-negative whole number as id");
 
         expect(newEmp).toThrowError(err);
