@@ -38,7 +38,7 @@ To run the command line application.
 
 ## Usage
 
-Run node app.js from the project directory to run the application.
+Run node index.js from the project directory to run the application.
 Provide user inputs for the questions.
 Check console for any errors.
 If the program runs without errors, the dist folder will have the index.html with team details.
